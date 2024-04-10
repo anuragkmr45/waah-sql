@@ -6,9 +6,10 @@ import { elementary } from "./theme";
 import { TYPES } from "./constant";
 import { table } from "./table";
 
-const worker = new Worker("worker.js", {
+const worker = new Worker(new URL("./worker.js", import.meta.url), {
   type: "module",
 });
+
 const terminal = new Terminal({
   convertEol: true,
   cursorBlink: true,
