@@ -69,6 +69,7 @@ worker.onmessage = (e) => {
 const runCommand = (command) => {
   if (command.startsWith("clear")) {
     terminal.clear();
+    prompt();
     return;
   }
   worker.postMessage(command);
